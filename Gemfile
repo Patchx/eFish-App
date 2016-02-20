@@ -47,4 +47,4 @@ end
 
 # Added Gems
 gem 'httparty' # for api calls to websites
-gem 'rinruby' # for using R in ruby
+gem 'statsample', '~> 2.0', '>= 2.0.1' # For statistcal analysis
