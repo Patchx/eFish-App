@@ -45,3 +45,6 @@ group :development do
   gem 'spring'
 end
 
+# Added Gems
+gem 'httparty' # for api calls to websites
+gem 'rinruby' # for using R in ruby
