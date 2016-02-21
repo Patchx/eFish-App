@@ -6,6 +6,7 @@ class StocksController < ApplicationController
 
   def show
     @stock = Stock.find(params[:id])
+    get_price
   end
 
 	def new
@@ -44,6 +45,19 @@ class StocksController < ApplicationController
 
   def stock_params
     params.require(:stock).permit(:name, :stockID)
-  end	
+  end
+
+  def get_price
+		input = @stock.stockID.downcase
+	  website = HTTParty.get("http://finance.yahoo.com/q?s=#{input}")
+	  noko = Nokogiri::HTML(website.body)
+	  price = noko.xpath("//span[@id='yfs_l84_#{input}']")
+	  if price.children[0] == nil
+	    @stock.price = "not found"
+	  else
+		  price = price.children[0].content.to_f.to_s(:currency)
+		  @stock.price = price
+	  end
+  end
 
 end

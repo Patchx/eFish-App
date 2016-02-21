@@ -8,5 +8,10 @@
   <%= @stock.stockID %>
 </p>
 
+<p>
+	<strong>Current Stock Price</strong>
+	<%= @stock.price %>
+</p>
+
 <%= link_to 'Edit', edit_stock_path(@stock) %>
 <%= link_to 'Back', stocks_path %>
