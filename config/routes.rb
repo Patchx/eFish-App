@@ -5,7 +5,6 @@ Rails.application.routes.draw do
   # Routes
   get 'toggl/index'
   get 'github/index'
-  get 'stocks/index' => 'yahoo_finance#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

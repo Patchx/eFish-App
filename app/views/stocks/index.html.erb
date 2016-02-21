@@ -1,4 +1,22 @@
 <h1>Stock list</h1>
 <h4>Powered by the Yahoo Finance API</h4>
 <br>
-<p>list</p>
+
+<%= link_to 'Add a stock', new_stock_path %>
+<br><br>
+
+<table>
+
+  <tr>
+    <th>Name</th>
+    <th>Stock ID</th>
+  </tr>
+ 
+  <% @stocks.each do |stock| %>
+    <tr>
+      <td><%= stock.name %></td>
+      <td><%= stock.stockID %></td>
+    </tr>
+  <% end %>
+
+</table>
