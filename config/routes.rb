@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
+  # RESTful CRUD resources
+  resources :stocks
+
+  # Routes
   get 'toggl/index'
   get 'github/index'
-  get 'finance/index' => 'yahoo_finance#index'
+  get 'stocks/index' => 'yahoo_finance#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

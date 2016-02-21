@@ -1,0 +1,22 @@
+<h1>New Stock</h1>
+<br>
+<%= form_for :stock, url: stocks_path do |f| %>
+  <p>
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </p>
+
+   <p>
+    <%= f.label :stockID %><br>
+    <%= f.text_field :stockID %>
+  </p>
+
+  <p>
+    <%= f.label :text %><br>
+    <%= f.text_area :text %>
+  </p>
+ 
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
