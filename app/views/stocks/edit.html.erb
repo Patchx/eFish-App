@@ -1,35 +1,6 @@
 <h1>Editing Stock</h1>
+<br>
  
-<%= form_for :stock, url: stock_path(@stock), method: :patch do |f| %>
- 
-  <% if @stock.errors.any? %>
-    <div id="error_explanation">
-      <h2>
-        <%= pluralize(@stock.errors.count, "error") %> prohibited
-        this stock from being saved:
-      </h2>
-      <ul>
-        <% @stock.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
- 
-  <p>
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </p>
- 
-  <p>
-    <%= f.label "Stock ID" %><br>
-    <%= f.text_field :stockID %>
-  </p>
- 
-  <p>
-    <%= f.submit %>
-  </p>
- 
-<% end %>
+<%= render 'form' %>
  
 <%= link_to 'Back', stocks_path %>

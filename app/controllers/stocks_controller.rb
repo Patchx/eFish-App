@@ -1,4 +1,5 @@
 class StocksController < ApplicationController
+
   def index
     @stocks = Stock.all
   end
@@ -17,7 +18,6 @@ class StocksController < ApplicationController
 	 
 	def create
 	  @stock = Stock.new(stock_params)
-	 
 	  if @stock.save
 	    redirect_to @stock
 	  else
@@ -27,7 +27,6 @@ class StocksController < ApplicationController
 
 	def update
 	  @stock = Stock.find(params[:id])
-	 
 	  if @stock.update(stock_params)
 	    redirect_to @stock
 	  else
@@ -35,9 +34,16 @@ class StocksController < ApplicationController
 	  end
 	end
 
+	def destroy
+	  @stock = Stock.find(params[:id])
+	  @stock.destroy
+	  redirect_to stocks_path
+	end
+
   private
 
   def stock_params
     params.require(:stock).permit(:name, :stockID)
   end	
+
 end
