@@ -10,6 +10,9 @@
 
 <p>
 	<strong>Current Stock Price</strong>
+	<% @stock.price = StocksController.get_price(@stock.stockID) %>
+	<% @stock.save %>
+	<% @stock.touch %> <!-- Updates timestamp in the database -->
 	<%= @stock.price %>
 </p>
 
