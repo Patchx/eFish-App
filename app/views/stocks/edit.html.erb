@@ -1,12 +1,12 @@
-<h1>New Stock</h1>
-<br>
-<%= form_for :stock, url: stocks_path do |f| %>
+<h1>Editing Stock</h1>
+ 
+<%= form_for :stock, url: stock_path(@stock), method: :patch do |f| %>
  
   <% if @stock.errors.any? %>
     <div id="error_explanation">
       <h2>
         <%= pluralize(@stock.errors.count, "error") %> prohibited
-        this article from being saved:
+        this stock from being saved:
       </h2>
       <ul>
         <% @stock.errors.full_messages.each do |msg| %>
