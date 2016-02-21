@@ -1,15 +1,13 @@
 Rails.application.routes.draw do
-  get 'yahoo/index'
-
   get 'toggl/index'
-
-  get 'github/index' => 'github#index'
+  get 'github/index'
+  get 'finance/index' => 'yahoo_finance#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'toggl#index'
+  root 'home#welcome'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
