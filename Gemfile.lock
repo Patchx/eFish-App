@@ -206,7 +206,7 @@ DEPENDENCIES
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
   spring
-  statsample (~> 2.0, >= 2.0.1)
+  statsample
   toggl_api
   turbolinks
   uglifier (>= 1.3.0)

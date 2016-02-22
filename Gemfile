@@ -48,5 +48,5 @@ end
 # Added Gems
 gem 'httparty' # for api calls to websites
 gem 'nokogiri' # for web scrapping
-gem 'statsample', '~> 2.0', '>= 2.0.1' # For statistcal analysis
+gem 'statsample'#, '~> 2.0', '>= 2.0.1' # For statistcal analysis
 gem 'toggl_api'

@@ -23,7 +23,7 @@
       <td><%= user.toggl %></td>
       <td><%= "******" if user.toggl_key != nil and user.toggl_key != '' %></td>
       <td><%= "******" if user.toggl_wid != nil and user.toggl_wid != '' %></td>
-      <td><%= link_to 'Show', user_path(user) %></td>
+      <td><%= link_to 'Time Report', user_path(user) %></td>
       <td><%= link_to 'Edit', edit_user_path(user) %></td>
       <td><%= link_to 'Destroy', user_path(user),
                         method: :delete,
