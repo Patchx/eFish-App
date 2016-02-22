@@ -1,0 +1,36 @@
+<p>
+  <strong>Name:</strong>
+  <%= @user.name %>
+</p>
+ 
+<p>
+  <strong>Email:</strong>
+  <%= @user.email %>
+</p>
+
+<p>
+  <strong>Toggl Account?:</strong>
+  <%= @user.toggl %>
+</p>
+
+<p>
+  <strong>Toggl API Token:</strong>
+  <%= "******" if @user.toggl_key != '' and @user.toggl_key != nil %>
+</p>
+
+<p>
+  <strong>Toggl Workspace ID:</strong>
+  <%= "******" if @user.toggl_wid != '' and @user.toggl_wid != nil %>
+</p>
+
+<p>
+  <strong>Toggl Reports:</strong>
+  <% if @user.toggl_wid != '' and @user.toggl_key != '' %>
+    <% report = UsersController.toggl_report(@user) %>
+    <% report = report.summary(@user.toggl_wid).as_json %>
+    <%= "#{report[0]["time"]} milliseconds on #{report[0]["title"]["project"]}" %>
+  <% end %>
+</p>
+
+<%= link_to 'Edit', edit_user_path(@user) %>
+<%= link_to 'Back', users_path %>

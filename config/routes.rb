@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
+
   # RESTful CRUD resources
-  resources :stocks
+  resources :stocks, :users
 
   # Routes
   get 'github/index'
-  get 'toggls/index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

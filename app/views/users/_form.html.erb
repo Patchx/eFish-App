@@ -1,0 +1,49 @@
+<%= form_for @user do |f| %>
+ 
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@user.errors.count, "error") %> prohibited
+        this user from being saved:
+      </h2>
+      <ul>
+        <% @user.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+ 
+  <p>
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </p>
+ 
+  <p>
+    <%= f.label :email %><br>
+    <%= f.text_field :email %>
+  </p>
+
+  <p>
+    <%= f.label "Has Toggl Account?" %><br>
+    <%= f.radio_button :toggl, 'yes' %> 
+    <%= f.label :toggl, 'yes', :value => 'yes' %>
+    <%= f.radio_button :toggl, 'no' %>
+    <%= f.label :toggl, 'no', :value => 'no' %>
+  </p>
+
+  <p>
+    <%= f.label "Toggl API token" %><br>
+    <%= f.password_field :toggl_key %>
+  </p>
+
+  <p>
+    <%= f.label "Toggl Workspace ID" %><br>
+    <%= f.password_field :toggl_wid %>
+  </p>
+
+   <p>
+    <%= f.submit %>
+  </p>
+ 
+<% end %>

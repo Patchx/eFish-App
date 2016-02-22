@@ -1,0 +1,34 @@
+<h2>Team Details</h2>
+<h4><a target="_blank" href="https://www.toggl.com/">Time Management powered by Toggl</a></h4>
+<p>See the Toggl API documentation for finding your Toggl API token and Workspace IDs</p>
+
+<%= link_to 'Add Team Member', new_user_path %>
+<br><br>
+
+<table>
+
+  <tr>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Toggl Account?</th>
+    <th>Toggl API Token</th>
+    <th>Toggl Workspace ID</th>
+    <th colspan="3"></th>
+  </tr>
+ 
+  <% @users.each do |user| %>
+    <tr>
+      <td><%= user.name %></td>
+      <td><%= user.email %></td>
+      <td><%= user.toggl %></td>
+      <td><%= "******" if user.toggl_key != nil and user.toggl_key != '' %></td>
+      <td><%= "******" if user.toggl_wid != nil and user.toggl_wid != '' %></td>
+      <td><%= link_to 'Show', user_path(user) %></td>
+      <td><%= link_to 'Edit', edit_user_path(user) %></td>
+      <td><%= link_to 'Destroy', user_path(user),
+                        method: :delete,
+                        data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+
+</table>

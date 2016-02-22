@@ -13,3 +13,43 @@
  *= require_tree .
  *= require_self
  */
+
+h4 {
+	text-decoration: underline;
+}
+
+a {
+	border: 2px solid black;
+	padding: 2px;
+	border-radius: 4px;
+	background-color: #22ddcc;
+	text-decoration: none;
+	color: black;
+	font-family: Arial;
+	font-weight: bold;
+}
+
+h1 a {
+	border-radius: 60px;
+	padding: 8px;
+}
+
+h4 a {
+	border: none;
+	background-color: transparent;
+}
+
+table {
+	border: 2px solid black;
+}
+
+th {
+	text-align: center;
+	padding: 4px;
+}
+
+td {
+	text-align: center;
+	border: 2px solid black;
+	padding: 4px;
+}
