@@ -1,10 +1,11 @@
 Rails.application.routes.draw do
 
   # RESTful CRUD resources
-  resources :stocks, :users
+  resources :stocks, :users, :statistics
 
   # Routes
-  get 'home/demo' => 'home#demo'
+  get 'stat/demo' => 'statistics#demo'
+  get 'stat/upload' => 'statistics#upload'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

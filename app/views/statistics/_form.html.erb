@@ -1,0 +1,26 @@
+<%= form_for @file do |f| %>
+ 
+  <% if @file.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@file.errors.count, "error") %> prohibited
+        this file from being uploaded:
+      </h2>
+      <ul>
+        <% @file.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <p>
+    <%= f.label "Please enter the file name" %><br>
+    <%= f.text_field :filename %>
+  </p>
+ 
+  <p>
+    <%= f.submit %>
+  </p>
+ 
+<% end %>

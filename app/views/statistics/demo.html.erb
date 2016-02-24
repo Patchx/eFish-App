@@ -6,9 +6,9 @@
 <br>
 
 <% @lr = @lr.summary.inspect.split("\\n") %>
+<!-- The code on the next line replaces the title string with a custom output -->
+<% @lr[0] = "Multiple Linear Regression Analysis: " %>
 <% @lr.each do |i| %>
 <%= i %>
 <br>
 <% end %>
-
-
