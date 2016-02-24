@@ -1,37 +1,41 @@
 class StatisticsController < ApplicationController
   def index
-    @files = Statistic.all
+    @statistics = Statistic.all
   end
 
   def show
-    @file = Statistic.find(params[:id])
+    @statistic = Statistic.find(params[:id])
   end
 
 	def new
-	  @file = Statistic.new
+	  @statistic = Statistic.new
 	end
 
 	def edit
-	  @file = Statistic.find(params[:id])
+	  @statistic = Statistic.find(params[:id])
 	end
 	 
 	def create
-	  @file = Statistic.new()
-	  if @file.save
-	    redirect_to @file
+	  @statistic = Statistic.new(statistic_params)
+	  if @statistic.save
+	    redirect_to @statistic
 	  else
 	    render 'new'
 	  end
 	end
 
 	def update
-	  @file = Statistic.find(params[:id])
-	  redirect_to @file
+	  @statistic = Stock.find(params[:id])
+	  if @statistic.update(statistic_params)
+	    redirect_to @statistic
+	  else
+	    render 'edit'
+	  end
 	end
 
 	def destroy
-	  @file = Statistic.find(params[:id])
-	  @file.destroy
+	  @statistic = Statistic.find(params[:id])
+	  @statistic.destroy
 	  redirect_to statistics_path
 	end
 
@@ -65,4 +69,10 @@ class StatisticsController < ApplicationController
   		return mlr(output)
 		end
 	end
+
+  private
+
+  def statistic_params
+    params.require(:statistic).permit(:filename)
+  end
 end

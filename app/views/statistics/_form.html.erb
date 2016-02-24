@@ -1,13 +1,13 @@
-<%= form_for @file do |f| %>
+<%= form_for @statistic do |f| %>
  
-  <% if @file.errors.any? %>
+  <% if @statistic.errors.any? %>
     <div id="error_explanation">
       <h2>
-        <%= pluralize(@file.errors.count, "error") %> prohibited
+        <%= pluralize(@statistic.errors.count, "error") %> prohibited
         this file from being uploaded:
       </h2>
       <ul>
-        <% @file.errors.full_messages.each do |msg| %>
+        <% @statistic.errors.full_messages.each do |msg| %>
           <li><%= msg %></li>
         <% end %>
       </ul>
@@ -15,7 +15,7 @@
   <% end %>
 
   <p>
-    <%= f.label "Please enter the file name" %><br>
+    <%= f.label :filename %><br>
     <%= f.text_field :filename %>
   </p>
  
