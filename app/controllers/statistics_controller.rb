@@ -64,9 +64,8 @@ class StatisticsController < ApplicationController
 
 	def mlr(filename)
 		require 'csv'    
-		CSV.foreach(filename, :headers => true) do |row|
+		CSV.foreach("$HOME/#{filename}", :headers => true) do |row|
   		output = Statistic.create!(row.to_hash)
-  		return mlr(output)
 		end
 	end
 

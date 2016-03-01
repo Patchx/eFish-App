@@ -13,7 +13,7 @@
   <% @statistics.each do |file| %>
     <tr>
       <td><%= file.filename %></td>
-      <td><%= link_to 'Show', statistic_path(file) %></td>
+      <td><%= link_to 'Run MLR', statistic_path(file) %></td>
       <td><%= link_to 'Edit', edit_statistic_path(file) %></td>
       <td><%= link_to 'Destroy', statistic_path(file),
                         method: :delete,
